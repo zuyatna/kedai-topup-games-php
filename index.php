@@ -21,19 +21,19 @@
                             <a class="nav-link active fw-medium" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="assets/pages/products.html">Products</a>
+                            <a class="nav-link fw-medium" href="assets/pages/products.php">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="assets/pages/gallery.html">Gallery</a>
+                            <a class="nav-link fw-medium" href="assets/pages/gallery.php">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="assets/pages/voucher.html">Voucher</a>
+                            <a class="nav-link fw-medium" href="assets/pages/voucher.php">Voucher</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="assets/pages/about-us.html">About</a>
+                            <a class="nav-link fw-medium" href="assets/pages/about-us.php">About</a>
                         </li>                        
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="assets/pages/contact.html">Contact</a>
+                            <a class="nav-link fw-medium" href="assets/pages/contact.php">Contact</a>
                         </li>
                     </ul>
                     <button class="btn-user" type="button">
@@ -58,7 +58,7 @@
                             dengan banyak diskon dan promo menarik<br>
                             setiap harinya.
                         </p>
-                        <a class="btn btn-primary margin-section" href="assets/pages/products.html" role="button">Shop Now</a>
+                        <a class="btn btn-primary margin-section" href="assets/pages/products.php" role="button">Shop Now</a>
                     </div>
                     <div class="col-lg-6">
                         <div class="d-flex justify-content-center">
@@ -78,7 +78,7 @@
                             dengan harga yang terjangkau dan<br>
                             diskon yang menarik.
                         </p>
-                        <a class="btn btn-primary margin-section" href="assets/pages/products.html" role="button">Eksplor Game</a>
+                        <a class="btn btn-primary margin-section" href="assets/pages/products.php" role="button">Eksplor Game</a>
                     </div>
                     <div class="col-lg-7 margin-child">
                         <div class="row g-4">
@@ -117,7 +117,7 @@
                             <div class="card-body">
                                 <p class="card-title fs-5 fw-semibold">Reset S34 Mobile Legends: Tanggal, First Purchase S35, dan Penurunan Rank</p>
                                 <p class="card-text fs-6">Season 34 MLBB akan segera berakhir dan pemain kini bersiap-siap menyambut musim 35 (S35). Reset musim ini membawa beberapa perubahan penting.</p>
-                                <a href="assets/pages/gallery.html" class="btn btn-outline-secondary">Read More</a>
+                                <a href="assets/pages/gallery.php" class="btn btn-outline-secondary">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                             <div class="card-body">
                                 <p class="card-title fs-5 fw-semibold">Kenalan dengan Astro Bot, Pemenang Game of the Year 2024</p>
                                 <p class="card-text fs-6">Astro Bot, game buatan Sony Interactive Entertainment dinobatkan sebagai pemenang Game of the Year 2024.</p>
-                                <a href="assets/pages/gallery.html" class="btn btn-outline-secondary">Read More</a>
+                                <a href="assets/pages/gallery.php" class="btn btn-outline-secondary">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                     <div class="margin-child">
                         <p class="fs-1 fw-semibold">Diskon Up to 50%</p>
                         <p class="fs-5">Buruan klaim voucher diskon spesial 12.12</p>
-                        <a class="btn btn-outline-primary margin-section" href="assets/pages/voucher.html" role="button">Claim Voucher</a>                                               
+                        <a class="btn btn-outline-primary margin-section" href="assets/pages/voucher.php" role="button">Claim Voucher</a>                                               
                     </div>
                 </div>
             </div>

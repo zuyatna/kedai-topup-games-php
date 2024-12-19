@@ -12,29 +12,29 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-mid">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold color-primary" href="../../index.html" style="color: #007bff;">Kedai Topup</a>
+                <a class="navbar-brand fw-bold color-primary" href="../../index.php" style="color: #007bff;">Kedai Topup</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../../index.html">Home</a>
+                            <a class="nav-link fw-medium" href="../../index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../pages/products.html">Products</a>
+                            <a class="nav-link fw-medium" href="../pages/products.php">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../pages/gallery.html">Gallery</a>
+                            <a class="nav-link fw-medium" href="../pages/gallery.php">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../pages/voucher.html">Voucher</a>
+                            <a class="nav-link fw-medium" href="../pages/voucher.php">Voucher</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active fw-medium" aria-current="page" href="#">About</a>
                         </li>                        
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../pages/contact.html">Contact</a>
+                            <a class="nav-link fw-medium" href="../pages/contact.php">Contact</a>
                         </li>
                     </ul>
                     <button class="btn-user" type="button">
