@@ -1,5 +1,26 @@
+<?php
+session_start();
+include('../config/config.php');
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $result = mysqli_query($mysqli, "SELECT * FROM user WHERE email='$email' AND password='$password'");
+    $user = mysqli_fetch_assoc($result);
+
+    if ($user) {
+        $_SESSION['user_name'] = $user['name'];
+        $_SESSION['user_id'] = $user['user_id'];
+        header('Location: ../../index.php');
+        exit();
+    } else {
+        $error = "Invalid email or password";
+    }
+}
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,30 +46,35 @@
                     <p class="fs-3 fw-semibold">Login</p>
                     <div class="row justify-content-center margin-section">                        
                         <div class="col">
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Email:</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput2" class="form-label">Password:</label>
-                                <div class="input-group">
-                                    <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="Password">
-                                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
-                                        <i class="bi bi-eye"></i>
-                                    </button>
+                            <form method="POST" action="">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Email:</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@example.com" required>
                                 </div>
-                            </div>
-                            <div class="mb-3 row g-3">
-                                <div class="col">                        
-                                    <input type="checkbox" class="form-check-input" id="rememberMe">
-                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput2" class="form-label">Password:</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="exampleFormControlInput2" name="password" placeholder="Password" required>
+                                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="col d-flex justify-content-end">
-                                    <a href="#" class="text-decoration-none">Forgot password?</a>
+                                <?php if (isset($error)): ?>
+                                    <div class="alert alert-danger"><?php echo $error; ?></div>
+                                <?php endif; ?>
+                                <div class="mb-3 row g-3">
+                                    <div class="col">                        
+                                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                                    </div>
+                                    <div class="col d-flex justify-content-end">
+                                        <a href="#" class="text-decoration-none">Forgot password?</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <button class="btn btn-primary btn-login">Login</button>
-                            <p class="text-center text-margin-top">Don't have an account? <a class="text-decoration-none" href="../pages/signup.html">Signup now</a></p>
+                                <button class="btn btn-primary btn-login" type="submit">Login</button>
+                            </form>
+                            <p class="text-center text-margin-top">Don't have an account? <a class="text-decoration-none" href="../pages/signup.php">Signup now</a></p>
                         </div>
                     </div>
                 </div>

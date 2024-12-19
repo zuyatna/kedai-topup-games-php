@@ -1,5 +1,8 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,34 +15,39 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-mid">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold color-primary logo-color" href="../../index.html">Kedai Topup</a>
+                <a class="navbar-brand fw-bold color-primary logo-color" href="../../index.php">Kedai Topup</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../../index.html">Home</a>
+                            <a class="nav-link fw-medium" href="../../index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../pages/products.html">Products</a>
+                            <a class="nav-link fw-medium" href="../pages/products.php">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../pages/gallery.html">Gallery</a>
+                            <a class="nav-link fw-medium" href="../pages/gallery.php">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../pages/voucher.html">Voucher</a>
+                            <a class="nav-link fw-medium" href="../pages/voucher.php">Voucher</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../pages/about-us.html">About</a>
+                            <a class="nav-link fw-medium" href="../pages/about-us.php">About</a>
                         </li>                        
                         <li class="nav-item">
                             <a class="nav-link active fw-medium" aria-current="page" href="#">Contact</a>
                         </li>
                     </ul>
-                    <button class="btn-user" type="button">
-                        <a href="../pages/login.html"><img src="../images/user-color.png" alt="user" width="25" height="25"></a>
-                    </button>
+                    <div>
+                        <?php if (isset($_SESSION['user_name'])): ?>
+                            <a href="../pages/profile.php"><img src="../images/user-color.png" alt="user" width="25" height="25"></a>
+                            <span class="me-2"><?php echo $_SESSION['user_name']; ?></span>
+                        <?php else: ?>
+                            <a href="../pages/login.php"><img src="../images/user-color.png" alt="user" width="25" height="25"></a>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </nav>

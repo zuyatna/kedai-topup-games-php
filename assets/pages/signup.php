@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +56,7 @@
                                 <label class="form-check-label" for="rememberMe">I accept all terms & conditions</label>                           
                             </div>
                             <button class="btn btn-primary btn-login">Login</button>
-                            <p class="text-center text-margin-top">Already have an account? <a class="text-decoration-none" href="../pages/login.html">Login now</a></p>
+                            <p class="text-center text-margin-top">Already have an account? <a class="text-decoration-none" href="../pages/login.php">Login now</a></p>
                         </div>
                     </div>
                 </div>

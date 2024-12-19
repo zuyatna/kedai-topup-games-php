@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -11,7 +14,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-mid">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold color-primary logo-color" href="#" style="color: #007bff;">Kedai Topup</a>
+                <a class="navbar-brand fw-bold color-primary logo-color" href="index.php" style="color: #007bff;">Kedai Topup</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -36,7 +39,14 @@
                             <a class="nav-link fw-medium" href="assets/pages/contact.php">Contact</a>
                         </li>
                     </ul>
-                    <a href="assets/pages/login.php"><img src="assets/images/user-color.png" alt="user" width="25" height="25"></a>
+                    <div>
+                        <?php if (isset($_SESSION['user_name'])): ?>
+                            <a href="assets/pages/profile.php"><img src="assets/images/user-color.png" alt="user" width="25" height="25"></a>
+                            <span class="me-2"><?php echo $_SESSION['user_name']; ?></span>
+                        <?php else: ?>
+                            <a href="assets/pages/login.php"><img src="assets/images/user-color.png" alt="user" width="25" height="25"></a>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </nav>
