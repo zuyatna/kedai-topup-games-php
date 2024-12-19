@@ -1,3 +1,35 @@
+<?php
+session_start();
+require_once('../config/config.php');
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+
+    if ($password !== $confirm_password) {
+        echo "<script>alert('Passwords do not match!'); window.location.href='signup.php';</script>";
+        exit();
+    }
+
+    $check_query = "SELECT * FROM user WHERE email = '$email'";
+    $result = mysqli_query($mysqli, $check_query);
+    
+    if (mysqli_num_rows($result) > 0) {
+        echo "<script>alert('Email already registered!'); window.location.href='signup.php';</script>";
+        exit();
+    }
+
+    $insert_query = "INSERT INTO user (name, email, password) VALUES ('$name', '$email', '$password')";
+    
+    if (mysqli_query($mysqli, $insert_query)) {
+        echo "<script>alert('Registration successful!'); window.location.href='login.php';</script>";
+    } else {
+        echo "<script>alert('Registration failed!'); window.location.href='signup.php';</script>";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -25,37 +57,39 @@
                     <p class="fs-3 fw-semibold">Signup</p>
                     <div class="row justify-content-center margin-section">                        
                         <div class="col">
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Name:</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput2" class="form-label">Email:</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput3" class="form-label">Password:</label>
-                                <div class="input-group">
-                                    <input type="password" class="form-control" id="exampleFormControlInput3" placeholder="Password">
-                                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
-                                        <i class="bi bi-eye"></i>
-                                    </button>
+                            <form method="POST" action="">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Name:</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="name">
                                 </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput4" class="form-label">Confirm Password:</label>
-                                <div class="input-group">
-                                    <input type="password" class="form-control" id="exampleFormControlInput4" placeholder="Password">
-                                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
-                                        <i class="bi bi-eye"></i>
-                                    </button>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput2" class="form-label">Email:</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput2" name="email" placeholder="name@example.com">
                                 </div>
-                            </div>
-                            <div class="mb-3">
-                                <input type="checkbox" class="form-check-input" id="rememberMe">
-                                <label class="form-check-label" for="rememberMe">I accept all terms & conditions</label>                           
-                            </div>
-                            <button class="btn btn-primary btn-login">Login</button>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput3" class="form-label">Password:</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="exampleFormControlInput3" name="password" placeholder="Password">
+                                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput4" class="form-label">Confirm Password:</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="exampleFormControlInput4" name="confirm_password" placeholder="Password">
+                                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">I accept all terms & conditions</label>                           
+                                </div>
+                                <button class="btn btn-primary btn-login" type="submit">Signup</button>                                
+                            </form>
                             <p class="text-center text-margin-top">Already have an account? <a class="text-decoration-none" href="../pages/login.php">Login now</a></p>
                         </div>
                     </div>
