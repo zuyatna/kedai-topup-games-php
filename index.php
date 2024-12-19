@@ -11,7 +11,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-mid">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold color-primary logo-color" href="#">Kedai Topup</a>
+                <a class="navbar-brand fw-bold color-primary logo-color" href="#" style="color: #007bff;">Kedai Topup</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -21,24 +21,22 @@
                             <a class="nav-link active fw-medium" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="assets/pages/products.html">Products</a>
+                            <a class="nav-link fw-medium" href="assets/pages/products.php">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="assets/pages/gallery.html">Gallery</a>
+                            <a class="nav-link fw-medium" href="assets/pages/gallery.php">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="assets/pages/voucher.html">Voucher</a>
+                            <a class="nav-link fw-medium" href="assets/pages/voucher.php">Voucher</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="assets/pages/about-us.html">About</a>
+                            <a class="nav-link fw-medium" href="assets/pages/about-us.php">About</a>
                         </li>                        
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="assets/pages/contact.html">Contact</a>
+                            <a class="nav-link fw-medium" href="assets/pages/contact.php">Contact</a>
                         </li>
                     </ul>
-                    <button class="btn-user" type="button">
-                        <a href="assets/pages/login.html"><img src="assets/images/user-color.png" alt="user" width="25" height="25"></a>
-                    </button>
+                    <a href="assets/pages/login.php"><img src="assets/images/user-color.png" alt="user" width="25" height="25"></a>
                 </div>
             </div>
         </nav>
@@ -58,7 +56,7 @@
                             dengan banyak diskon dan promo menarik<br>
                             setiap harinya.
                         </p>
-                        <a class="btn btn-primary margin-section" href="assets/pages/products.html" role="button">Shop Now</a>
+                        <a class="btn btn-primary margin-section" href="assets/pages/products.php" role="button">Shop Now</a>
                     </div>
                     <div class="col-lg-6">
                         <div class="d-flex justify-content-center">
@@ -78,7 +76,7 @@
                             dengan harga yang terjangkau dan<br>
                             diskon yang menarik.
                         </p>
-                        <a class="btn btn-primary margin-section" href="assets/pages/products.html" role="button">Eksplor Game</a>
+                        <a class="btn btn-primary margin-section" href="assets/pages/products.php" role="button">Eksplor Game</a>
                     </div>
                     <div class="col-lg-7 margin-child">
                         <div class="row g-4">
@@ -117,7 +115,7 @@
                             <div class="card-body">
                                 <p class="card-title fs-5 fw-semibold">Reset S34 Mobile Legends: Tanggal, First Purchase S35, dan Penurunan Rank</p>
                                 <p class="card-text fs-6">Season 34 MLBB akan segera berakhir dan pemain kini bersiap-siap menyambut musim 35 (S35). Reset musim ini membawa beberapa perubahan penting.</p>
-                                <a href="assets/pages/gallery.html" class="btn btn-outline-secondary">Read More</a>
+                                <a href="assets/pages/gallery.php" class="btn btn-outline-secondary">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -127,7 +125,7 @@
                             <div class="card-body">
                                 <p class="card-title fs-5 fw-semibold">Kenalan dengan Astro Bot, Pemenang Game of the Year 2024</p>
                                 <p class="card-text fs-6">Astro Bot, game buatan Sony Interactive Entertainment dinobatkan sebagai pemenang Game of the Year 2024.</p>
-                                <a href="assets/pages/gallery.html" class="btn btn-outline-secondary">Read More</a>
+                                <a href="assets/pages/gallery.php" class="btn btn-outline-secondary">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -137,7 +135,7 @@
                             <div class="card-body">
                                 <p class="card-title fs-5 fw-semibold">Inilah Hero Indonesia Pertama di Game Honor of Kings 2025</p>
                                 <p class="card-text fs-6">Honor of Kings (HOK) akan memperkenalkan hero baru asal Indonesia yang sangat dinanti, yaitu Garuda Khageswara.</p>
-                                <a href="assets/pages/gallery.html" class="btn btn-outline-secondary">Read More</a>
+                                <a href="assets/pages/gallery.php" class="btn btn-outline-secondary">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -150,7 +148,7 @@
                     <div class="margin-child">
                         <p class="fs-1 fw-semibold">Diskon Up to 50%</p>
                         <p class="fs-5">Buruan klaim voucher diskon spesial 12.12</p>
-                        <a class="btn btn-outline-primary margin-section" href="assets/pages/voucher.html" role="button">Claim Voucher</a>                                               
+                        <a class="btn btn-outline-primary margin-section" href="assets/pages/voucher.php" role="button">Claim Voucher</a>                                               
                     </div>
                 </div>
             </div>

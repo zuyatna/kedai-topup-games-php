@@ -11,34 +11,32 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-mid">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold color-primary logo-color" href="../../index.html">Kedai Topup</a>
+                <a class="navbar-brand fw-bold color-primary logo-color" href="../../index.php" style="color: #007bff;">Kedai Topup</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../../index.html">Home</a>
+                            <a class="nav-link fw-medium" href="../../index.php">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active fw-medium" aria-current="page" href="#">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../pages/gallery.html">Gallery</a>
+                            <a class="nav-link fw-medium" href="../pages/gallery.php">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../pages/voucher.html">Voucher</a>
+                            <a class="nav-link fw-medium" href="../pages/voucher.php">Voucher</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../pages/about-us.html">About</a>
+                            <a class="nav-link fw-medium" href="../pages/about-us.php">About</a>
                         </li>                        
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../pages/contact.html">Contact</a>
+                            <a class="nav-link fw-medium" href="../pages/contact.php">Contact</a>
                         </li>
                     </ul>
-                    <button class="btn-user" type="button">
-                        <a href="../pages/login.html"><img src="../images/user-color.png" alt="user" width="25" height="25"></a>
-                    </button>
+                    <a href="../pages/login.php"><img src="../images/user-color.png" alt="user" width="25" height="25"></a>
                 </div>
             </div>
         </nav>
@@ -124,7 +122,7 @@
                     <div class="margin-child">
                         <p class="fs-1 fw-semibold">Diskon Up to 50%</p>
                         <p class="fs-5">Buruan klaim voucher diskon spesial 12.12</p>                        
-                        <a class="btn btn-outline-primary margin-section" href="../pages/voucher.html" role="button">Claim Voucher</a>                                               
+                        <a class="btn btn-outline-primary margin-section" href="../pages/voucher.php" role="button">Claim Voucher</a>                                               
                     </div>
                 </div>
             </div>
