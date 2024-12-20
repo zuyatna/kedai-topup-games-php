@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput2" class="form-label">Password:</label>
                                     <div class="input-group">
-                                        <input type="password" class="form-control" id="exampleFormControlInput2" name="password" placeholder="Password" required>
+                                        <input type="password" class="form-control" id="exampleFormControlInput2" name="password" placeholder="password" required>
                                         <button class="btn btn-outline-secondary" type="button" id="togglePassword">
                                             <i class="bi bi-eye"></i>
                                         </button>
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <label class="form-check-label" for="rememberMe">Remember me</label>
                                     </div>
                                     <div class="col d-flex justify-content-end">
-                                        <a href="#" class="text-decoration-none">Forgot password?</a>
+                                        <a href="../pages/forgot-password.php" class="text-decoration-none">Forgot password?</a>
                                     </div>
                                 </div>
                                 <button class="btn btn-primary btn-login" type="submit">Login</button>

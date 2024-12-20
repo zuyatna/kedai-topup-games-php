@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput2" class="form-label">Password:</label>
                                     <div class="input-group">
-                                        <input type="password" class="form-control" id="exampleFormControlInput2" name="password" placeholder="Password">
+                                        <input type="password" class="form-control" id="exampleFormControlInput2" name="password" placeholder="password">
                                         <button class="btn btn-outline-secondary" type="button" id="togglePassword">
                                             <i class="bi bi-eye"></i>
                                         </button>
@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput3" class="form-label">Confirm Password:</label>
                                     <div class="input-group">
-                                        <input type="password" class="form-control" id="exampleFormControlInput3" name="confirm_password" placeholder="Confirm Password">
+                                        <input type="password" class="form-control" id="exampleFormControlInput3" name="confirm_password" placeholder="confirm password">
                                         <button class="btn btn-outline-secondary" type="button" id="togglePassword1">
                                             <i class="bi bi-eye"></i>
                                         </button>

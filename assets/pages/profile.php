@@ -27,13 +27,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('Location: profile.php');
         exit();
     } elseif (isset($_POST['change_password'])) {
-        $password = $_POST['password'];
-        $query = "UPDATE user SET password = ? WHERE user_id = ?";
-        $stmt = $mysqli->prepare($query);
-        $stmt->bind_param('si', $password, $user_id);
-        $stmt->execute();
-        header('Location: profile.php');
-        exit();
+        $current_password = $_POST['current_password'];
+        $new_password = $_POST['new_password'];
+
+        if ($current_password === $user['password']) {            
+            $query = "UPDATE user SET password = ? WHERE user_id = ?";
+            $stmt = $mysqli->prepare($query);
+            $stmt->bind_param('si', $new_password, $user_id);
+            $stmt->execute();
+            echo "<script>alert('Change password successful!'); window.location.href='profile.php';</script>";
+        } else {
+            $errorPassword = "Invalid current password";
+        }
     } elseif (isset($_POST['delete_account'])) {
         $query = "DELETE FROM users WHERE user_id = ?";
         $stmt = $mysqli->prepare($query);
@@ -78,12 +83,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div class="col">
                             <form method="POST" action="">
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Name:</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="<?php echo ($user['name']); ?>" required>
+                                    <label for="exampleFormControlInput0" class="form-label">Name:</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInput0" name="name" value="<?php echo ($user['name']); ?>" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput2" class="form-label">Email:</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput2" name="email" value="<?php echo ($user['email']); ?>" required>
+                                    <label for="exampleFormControlInput1" class="form-label">Email:</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" name="email" value="<?php echo ($user['email']); ?>" required>
                                 </div>                            
                                 <button class="btn btn-primary btn-login" type="submit" name="update_profile">Update Profile</button>
                             </form>                            
@@ -98,10 +103,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="row justify-content-center margin-section">                        
                         <div class="col">
                             <form method="POST" action="">
+                            <div class="mb-3">
+                                    <label for="exampleFormControlInput2" class="form-label">Current Password:</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="exampleFormControlInput2" name="current_password" placeholder="recent password">
+                                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput3" class="form-label">New Password:</label>
-                                    <input type="password" class="form-control" id="exampleFormControlInput3" name="password" placeholder="password" required>
-                                </div>                                                           
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="exampleFormControlInput3" name="new_password" placeholder="new password">
+                                        <button class="btn btn-outline-secondary" type="button" id="togglePassword1">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <?php if (isset($errorPassword)): ?>
+                                    <div class="alert alert-danger"><?php echo $errorPassword; ?></div>
+                                <?php endif; ?>                                                     
                                 <button class="btn btn-primary btn-login" type="submit" name="change_password">Change Password</button>
                             </form>                            
                         </div>
