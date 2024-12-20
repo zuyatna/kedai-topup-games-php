@@ -1,5 +1,26 @@
 <?php
 session_start();
+require_once('../config/config.php');
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $firstName = $_POST['first_name'];
+    $lastName = $_POST['last_name'];
+    $fullName = $firstName . ' ' . $lastName;
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    echo "$fullName";
+
+    $insert_query = "INSERT INTO contact_form (name, email, subject, message) VALUES ('$fullName', '$email', '$subject', '$message')";
+        
+    if (mysqli_query($mysqli, $insert_query)) {
+        echo "<script>alert('Message has been send. Thank You!'); window.location.href='contact.php';</script>";
+    } else {
+        echo "<script>alert('Failed sending a message'); window.location.href='contact.php';</script>";
+        error_log("MySQL error: " . mysqli_error($mysqli));
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -60,27 +81,27 @@ session_start();
                 <p class="text-center mb-4">
                     Jika Anda memiliki pertanyaan, masukan, atau permintaan, jangan ragu untuk menghubungi kami menggunakan formulir di bawah ini. Kami menghargai masukan Anda dan akan segera menghubungi Anda kembali.
                 </p>
-                <form class="form-margin-top">
+                <form class="form-margin-top" method="POST" action="">
                     <div class="mb-3 row">
-                        <label for="name" class="form-label">Name*</label>
+                        <label class="form-label">Name*</label>
                         <div class="col">                        
-                            <input type="text" class="form-control" id="first-name" placeholder="First Name" required>
+                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" required>
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" id="last-name" placeholder="Last Name" required>
+                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" required>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email*</label>
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Subject*</label>
-                        <input type="text" class="form-control" id="subject" required>
+                        <label for="subject" class="form-label">Subject*</label>
+                        <input type="text" class="form-control" id="subject" name="subject" required>
                     </div>
                     <div class="mb-3">
                         <label for="message" class="form-label">Message*</label>
-                        <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                        <textarea class="form-control" id="message" rows="4" name="message" placeholder="Your Message" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>

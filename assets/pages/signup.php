@@ -4,7 +4,7 @@ require_once('../config/config.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
-    $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+    $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
