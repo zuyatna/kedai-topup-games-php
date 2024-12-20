@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div>
                         <?php if (isset($_SESSION['user_name'])): ?>
                             <a href="../pages/profile.php"><img src="../images/user-color.png" alt="user" width="25" height="25"></a>
-                            <span class="me-2"><?php echo $_SESSION['user_name']; ?></span>
+                            <span class="me-2">Hi, <?php echo $_SESSION['user_name']; ?></span>
                         <?php else: ?>
                             <a href="../pages/login.php"><img src="../images/user-color.png" alt="user" width="25" height="25"></a>
                         <?php endif; ?>
