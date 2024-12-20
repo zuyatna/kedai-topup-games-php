@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <header>
         <nav class="navbar navbar-expand-lg navbar-mid">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold color-primary logo-color" href="../../index.php" style="color: #007bff;">Kedai Topup</a>                
+                <a class="navbar-brand fw-bold color-primary logo-color" href="../../index.php">Kedai Topup</a>                
             </div>
         </nav>
     </header>
@@ -147,8 +147,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="row justify-content-center margin-section">                        
                         <div class="col">
                             <form method="POST" action="">
-                                <p class="fs-4 fw-semibold" style="color: red;">Delete Account</p>                                                           
-                                <button class="btn btn-primary btn-login" type="submit" name="delete_account" onclick="return confirm('Are you sure you want to delete your account?');" style="background-color: red;">Delete Account</button>
+                                <p class="fs-4 fw-semibold color-red">Delete Account</p>                                                           
+                                <button class="btn btn-primary btn-login color-red" type="submit" name="delete_account" onclick="return confirm('Are you sure you want to delete your account?');">Delete Account</button>
                             </form>                            
                         </div>
                     </div>

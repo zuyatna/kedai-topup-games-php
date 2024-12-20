@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <header>
         <nav class="navbar navbar-expand-lg navbar-mid">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold color-primary logo-color" href="../../index.php" style="color: #007bff;">Kedai Topup</a>                
+                <a class="navbar-brand fw-bold color-primary logo-color" href="../../index.php">Kedai Topup</a>                
             </div>
         </nav>
     </header>
