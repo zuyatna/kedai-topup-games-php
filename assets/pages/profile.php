@@ -19,13 +19,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['update_profile'])) {
         $name = $_POST['name'];
         $email = $_POST['email'];
-        $query = "UPDATE user SET name = ?, email = ? WHERE user_id = ?";
-        $stmt = $mysqli->prepare($query);
-        $stmt->bind_param('ssi', $name, $email, $user_id);
-        $stmt->execute();
-        $_SESSION['user_name'] = $name;
-        header('Location: profile.php');
-        exit();
+
+        $check_query = "SELECT * FROM user WHERE email = '$email'";
+        $result = mysqli_query($mysqli, $check_query);
+        
+        if (mysqli_num_rows($result) > 0) {
+            $errorEmail = "Email already registered";
+        } else {
+            $query = "UPDATE user SET name = ?, email = ? WHERE user_id = ?";
+            $stmt = $mysqli->prepare($query);
+            $stmt->bind_param('ssi', $name, $email, $user_id);
+            $stmt->execute();
+            $_SESSION['user_name'] = $name;
+            echo "<script>alert('Change email successful!'); window.location.href='profile.php';</script>";
+        }
     } elseif (isset($_POST['change_password'])) {
         $current_password = $_POST['current_password'];
         $new_password = $_POST['new_password'];
@@ -89,7 +96,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Email:</label>
                                     <input type="email" class="form-control" id="exampleFormControlInput1" name="email" value="<?php echo ($user['email']); ?>" required>
-                                </div>                            
+                                </div>
+                                <?php if (isset($errorEmail)): ?>
+                                    <div class="alert alert-danger"><?php echo $errorEmail; ?></div>
+                                <?php endif; ?>                            
                                 <button class="btn btn-primary btn-login" type="submit" name="update_profile">Update Profile</button>
                             </form>                            
                         </div>
